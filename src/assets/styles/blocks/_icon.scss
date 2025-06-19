@@ -1,0 +1,96 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+@mixin new-icon($name, $color: #000) {
+  &_#{$name} {
+    mask-image: url('../icons/#{$name}.svg');
+    background-color: #{$color};
+    @content;
+  }
+}
+
+@mixin new-bg-icon($name) {
+  &_#{$name} {
+    background-image: url('../icons/#{$name}.svg');
+    @content;
+  }
+}
+
+.icon {
+  display: inline-block;
+  height: 1rem;
+  aspect-ratio: 1;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+
+  &_s {
+    height: 16px;
+  }
+
+  &_sm {
+    height: 20px;
+  }
+
+  &_m {
+    height: 24px;
+  }
+
+  &_l {
+    height: 32px;
+  }
+
+  &_xl {
+    height: 48px;
+  }
+
+  @include new-icon('arrow');
+  @include new-icon('award');
+  @include new-icon('cart');
+  @include new-icon('clock');
+  @include new-icon('chevron-top') {
+    mask-image: url('../icons/chevron.svg');
+    rotate: 180deg;
+  };
+  @include new-icon('chevron-right') {
+    mask-image: url('../icons/chevron.svg');
+    rotate: -90deg;
+  };
+  @include new-icon('chevron-bottom') {
+    mask-image: url('../icons/chevron.svg');
+  };
+  @include new-icon('chevron-left') {
+    mask-image: url('../icons/chevron.svg');
+    rotate: 90deg;
+  };
+  @include new-icon('disc');
+  @include new-icon('fb');
+  @include new-icon('inst');
+  @include new-icon('mail');
+  @include new-icon('phone');
+  @include new-icon('phone-outline');
+  @include new-icon('pin');
+  @include new-icon('refresh-cw');
+  @include new-icon('repair');
+  @include new-icon('search');
+  @include new-icon('shield');
+  @include new-icon('yt');
+  @include new-bg-icon('calendar');
+  @include new-bg-icon('rocket');
+  @include new-bg-icon('guarantee');
+  @include new-bg-icon('delivery');
+
+  &-wrapper {
+    width: 48px;
+    aspect-ratio: 1;
+    color: $primary;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background-color: $gray-100;
+  }
+
+  &_current-color {
+    background-color: currentcolor;
+  }
+}

@@ -1,0 +1,39 @@
+:root {
+  --container-padding: 16px;
+  --container-width: 1110px;
+  --section-margin: clamp(48px, 6vw, 80px);
+  --primary: #F57C00;
+  --primary-hover: #FF962A;
+  --primary-active: #D36D05;
+  --error: #BE0000;
+  --gray-0: #fff;
+  --gray-10: #E8E9E9;
+  --gray-20: #D2D3D5;
+  --gray-30: #BCBDBF;
+  --gray-40: #A6A7AA;
+  --gray-50: #8F9195;
+  --gray-60: #797B80;
+  --gray-70: #656976;
+  --gray-80: #4D4F55;
+  --gray-90: #363940;
+  --gray-100: #20232B;
+}
+
+$container-padding: var(--container-padding);
+$container-width: var(--container-width);
+$section-margin: var(--section-margin);
+$primary: var(--primary);
+$primary-hover: var(--primary-hover);
+$primary-active: var(--primary-active);
+$error: var(--error);
+$gray-0: var(--gray-0);
+$gray-10: var(--gray-10);
+$gray-20: var(--gray-20);
+$gray-30: var(--gray-30);
+$gray-40: var(--gray-40);
+$gray-50: var(--gray-50);
+$gray-60: var(--gray-60);
+$gray-70: var(--gray-70);
+$gray-80: var(--gray-80);
+$gray-90: var(--gray-90);
+$gray-100: var(--gray-100);

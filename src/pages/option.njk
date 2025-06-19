@@ -1,0 +1,311 @@
+---
+permalink: option.html
+layout: main.njk
+title: Ремонт и обслуживание техники
+eleventyNavigation:
+  key: servicesOption
+  parent: home
+  title: РЕМОНТ
+---
+
+{% from 'components/products.njk' import products %}
+
+{% include "sections/hero.njk" %}
+
+<div class="breadcrumbs-wrapper">
+  <div class="container">
+    {% include "components/breadcrumbs.njk" %}
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="h1">Ремонт и обслуживание техники</h1>
+</div>
+
+{{
+  products(
+    title = 'Ремонт строительной техники',
+    items = [
+      {
+        title: 'Ремонт электрогенераторов',
+        imageName: 'generator'
+      },
+      {
+        title: 'Ремонт вибротрамбовки',
+        imageName: 'vibrating-plate'
+      },
+      {
+        title: 'Ремонт затирочных машин',
+        imageName: 'zatyralna-mashyna'
+      },
+      {
+        title: 'Ремонт мотопомп',
+        imageName: 'motopompa'
+      }
+    ]
+  )
+}}
+
+{{
+  products(
+    title = 'Ремонт садовой техники',
+    items = [
+      {
+        title: 'Ремонт бензопил',
+        imageName: 'benzopila'
+      },
+      {
+        title: 'Ремонт мотобуров',
+        imageName: 'motobur'
+      },
+      {
+        title: 'Ремонт мотоопрыскивателей',
+        imageName: 'motoopriskivatel'
+      },
+      {
+        title: 'Ремонт снегоуборщиков',
+        imageName: 'snegouborshik'
+      },
+      {
+        title: 'Ремонт высоторезов',
+        imageName: 'visotorez'
+      },
+      {
+        title: 'Ремонт газонокосилок',
+        imageName: 'gazonokosilka'
+      },
+      {
+        title: 'Ремонт триммеров',
+        imageName: 'trimmer'
+      },
+      {
+        title: 'Ремонт мотокосы',
+        imageName: 'motokosa'
+      },
+      {
+        title: 'Ремонт садовых тракторов, райдеров, тракторов-газонокосилок',
+        imageName: 'rajder-husqvarna-rc'
+      }
+    ]
+  )
+}}
+
+{{
+  products(
+    title = 'Ремонт мототехники',
+    items = [
+      {
+        title: 'Ремонт мотоциклов',
+        imageName: 'motocykl'
+      },
+      {
+        title: 'Ремонт скутера',
+        imageName: 'scooter'
+      },
+      {
+        title: 'Ремонт мопедов',
+        imageName: 'moped'
+      },
+      {
+        title: 'Ремонт квадроциклов',
+        imageName: 'atv'
+      },
+      {
+        title: 'Ремонт лодочных моторов',
+        imageName: 'motor'
+      }
+    ]
+  )
+}}
+
+{{
+  products(
+    title = 'Ремонт электротранспорта',
+    items = [
+      {
+        title: 'Ремонт гиробордов',
+        imageName: 'hoverboard'
+      },
+      {
+        title: 'Ремонт гироскутеров',
+        imageName: 'gyro-scooter'
+      },
+      {
+        title: 'Ремонт моноколес',
+        imageName: 'monokoleso'
+      },
+      {
+        title: 'Ремонт электровелосипедов',
+        imageName: 'electric-bike'
+      },
+      {
+        title: 'Ремонт электросамокатов',
+        imageName: 'unicycle'
+      },
+      {
+        title: 'Ремонт электроскутеров',
+        imageName: 'electric-scooter'
+      }
+    ]
+  )
+}}
+
+{{
+  products(
+    title = 'Ремонт сельхозтехники',
+    items = [
+      {
+        title: 'Ремонт тракторов',
+        imageName: 'tractor'
+      },
+      {
+        title: 'Ремонт мотоблоков',
+        imageName: 'monoblock'
+      },
+      {
+        title: 'Ремонт миникомбайнов',
+        imageName: 'kombain'
+      },
+      {
+        title: 'Ремонт мотокультиваторов',
+        imageName: 'motokultivator'
+      },
+      {
+        title: 'Ремонт мини тракторов',
+        imageName: 'mini-tractor'
+      }
+    ]
+  )
+}}
+
+{{
+  products(
+    title = 'Ремонт электроинструмента',
+    items = [
+      {
+        title: 'Ремонт бетономешалок',
+        imageName: 'betonomeshalka'
+      },
+      {
+        title: 'Ремонт болгарок',
+        imageName: 'bolgarka'
+      },
+      {
+        title: 'Ремонт гайковертов',
+        imageName: 'gaykovert'
+      },
+      {
+        title: ' Ремонт дрелей',
+        imageName: 'drel'
+      },
+      {
+        title: 'Ремонт перфораторов',
+        imageName: 'perf'
+      },
+      {
+        title: 'Ремонт клеевого пистолета',
+        imageName: 'kley'
+      },
+      {
+        title: 'Ремонт лобзиков',
+        imageName: 'lobzik'
+      },
+      {
+        title: 'Ремонт электрического миксера',
+        imageName: 'mixer'
+      },
+      {
+        title: 'Ремонт отбойных молотков',
+        imageName: 'otbojnik'
+      },
+      {
+        title: 'Ремонт электропилы',
+        imageName: 'elektropila'
+      },
+      {
+        title: 'Ремонт полировальной машинки',
+        imageName: 'polirovka'
+      },
+      {
+        title: ' Ремонт электрического рубанка',
+        imageName: 'rubanok'
+      },
+      {
+        title: 'Ремонт термовоздуходувки',
+        imageName: 'fen'
+      },
+      {
+        title: 'Ремонт точила',
+        imageName: 'tochila'
+      },
+      {
+        title: 'Ремонт ручного фрезера',
+        imageName: 'frezer'
+      },
+      {
+        title: 'Ремонт электродвигателей',
+        imageName: 'electric-motor'
+      },
+      {
+        title: 'Ремонт ленточных шлифмашин',
+        imageName: 'shlif_mashina'
+      },
+      {
+        title: 'Ремонт бороздодела',
+        imageName: 'borozdodel'
+      },
+      {
+        title: 'Ремонт шуруповерта',
+        imageName: 'shurik'
+      },
+      {
+        title: 'Ремонт электрического степлера',
+        imageName: 'stepler'
+      },
+      {
+        title: 'Ремонт компрессора',
+        imageName: 'kompressor'
+      }
+    ]
+  )
+}}
+
+{{
+  products(
+    title = 'Ремонт двигателей',
+    items = [
+      {
+        title: 'Ремонт двигателей общего назначения',
+        imageName: 'generator'
+      }
+    ]
+  )
+}}
+
+{{
+  products(
+    title = 'Ремонт навесного оборудования',
+    items = [
+      {
+        title: 'Ремонт косилок',
+        imageName: 'kosilka'
+      }
+    ]
+  )
+}}
+
+{{
+  products(
+    title = 'Ремонт дорожной и спецтехники',
+    items = [
+      {
+        title: 'Ремонт мини-экскаваторов',
+        imageName: 'mini-ekskovator'
+      },
+      {
+        title: 'Ремонт погрузчиков',
+        imageName: 'kara'
+      }
+    ]
+  )
+}}

@@ -1,0 +1,35 @@
+{% from 'components/product.njk' import product %}
+
+{% macro products(
+  title = '',
+  items = [],
+  isHeaderVisible = true
+) %}
+  <section class="products">
+    <div class="container">
+      {% if isHeaderVisible %}
+        <div class="products__header">
+          <h2 class="products__title h4">{{ title }}</h2>
+          <div class="products__link">
+            <a href="#" class="link text-m">
+              <span class="link__copy">Перейти в категорию</span>
+              <span class="link__append">
+                <span class="icon icon_sm icon_current-color icon_chevron-right"></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      {% endif %}
+      <div class="products__content">
+        {% for item in items %}
+          {{
+            product(
+              title = item.title,
+              imageName = item.imageName
+            )
+          }}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endmacro %}

@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as *;
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+
+  thead {
+    background-color: $gray-70;
+    color: $gray-0;
+  }
+
+  tbody {
+    tr {
+      background-color: $gray-0;
+
+      &:nth-child(odd) {
+        background-color: $gray-10;
+      }
+    }
+  }
+
+  th, td {
+    padding-block: 12px;
+
+    &:first-child {
+      padding-inline: 16px;
+    }
+  }
+
+  &-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+}

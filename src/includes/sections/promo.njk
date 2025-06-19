@@ -1,0 +1,39 @@
+{% from 'components/btn.njk' import btn %}
+
+<section class="promo">
+  <h2 class="visually-hidden">Вигідні пропозиції</h2>
+  <div class="container">
+    <div class="promo__content">
+      <div class="promo__carousel swiper" aria-roledescription="carousel" aria-label="Вигідні пропозиції">
+        <div class="promo__inner swiper-wrapper" aria-live="polite">
+          {% for i in range(3) %}
+            <article class="promo__item swiper-slide">
+              <div class="promo__img-wrapper">
+                <img class="promo__img" src="/assets/images/promo/1.png" alt="" width=180>
+              </div>
+              <div class="promo__col">
+                <h3 class="promo__title h2">Аренда</h3>
+                <p class="promo__subtitle h5">Бензопила Forte FGS 45-45</p>
+                <div class="promo__action">
+                  {{ btn(
+                    tag= 'a',
+                    modifier= 'secondary',
+                    text= '100 ₴/день'
+                  ) }}
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+      <button class="promo__btn promo__btn_prev" type="button">
+        <span class="visually-hidden">Предыдущий слайд</span>
+        <span class="icon icon_sm icon_current-color icon_chevron-left"></span>
+      </button>
+      <button class="promo__btn promo__btn_next" type="button">
+        <span class="visually-hidden">Следующий слайд</span>
+        <span class="icon icon_sm icon_current-color icon_chevron-right"></span>
+      </button>
+    </div>
+  </div>
+</section>

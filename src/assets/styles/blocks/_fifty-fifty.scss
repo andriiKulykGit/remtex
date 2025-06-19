@@ -1,0 +1,45 @@
+@use '../abstracts/variables' as *;
+
+.fifty-fifty {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  gap: 16px 60px;
+  margin-top: 32px;
+
+  &__col {
+  }
+
+  &__img {
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    ol, ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 2em;
+    }
+
+    li {
+      &::marker {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.doublelist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 8px;
+}

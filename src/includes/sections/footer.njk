@@ -1,0 +1,92 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__col">
+          <address class="footer__contacts">
+            <ul class="footer__info">
+              <li class="footer__info-item text-l">
+                <span class="footer__icon">
+                  <span class="icon icon_m icon_pin"></span>
+                </span>
+                <span class="visually-hidden">Адреса:</span>
+                <span>
+                  <a href="#" target="_blank" rel="nofollow" class="footer__info-link">
+                    г.Киев, ул. Кольцевая дорога 22
+                  </a>
+                </span>
+              </li>
+              <li class="footer__info-item text-l">
+                <span class="footer__icon">
+                  <span class="icon icon_m icon_clock"></span>
+                </span>
+                <span class="visually-hidden">Графік роботи:</span>
+                <span>
+                  <span>Пн. - Сб.</span>
+                  <time datetime="09:00">9:00</time>
+                  <span> - </span>
+                  <time datetime="18:00">18:00</time>
+                </span>
+              </li>
+              <li class="footer__info-item text-l">
+                <span class="footer__icon">
+                  <span class="icon icon_m icon_phone-outline"></span>
+                </span>
+                <span class="visually-hidden">Контактні номера телефону:</span>
+                <span class="footer__phones">
+                  <span>
+                    <a href="tel:+380679943669" class="footer__info-link">
+                      <span>(067) 994-36-69</span>
+                    </a>
+                    <span>(Ремонт)</span>
+                  </span>
+                  <span>
+                    <a href="tel:+380502997949" class="footer__info-link">
+                      <span>(050) 299-79-49</span>
+                    </a>
+                    <span>(Аренда прокат)</span>
+                  </span>
+                </span>
+              </li>
+              <li class="footer__info-item text-l">
+                <span class="footer__icon">
+                  <span class="icon icon_m icon_mail"></span>
+                </span>
+                <span class="visually-hidden">Електронна пошта:</span>
+                <span>
+                  <a href="mailto:remtex@remtex.com.ua" target="_blank" class="footer__info-link">
+                    remtex@remtex.com.ua
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </address>
+          <div class="footer__social">
+            <ul class="social">
+              {% for s in social %}
+                <li>
+                  <a class="social__link" href="{{s.link}}" target="_blank" rel="nofollow">
+                    <span class="visually-hidden">{{ s.text }}</span>
+                    <span class="icon icon_sm icon_current-color {{ s.icon }}"></span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <ul class="footer__links">
+            <li>
+              <a href="#" class="footer__link">Производители</a>
+            </li>
+            <li>
+              <a href="#" class="footer__link">Оплата</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__map" id="map"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__label">
+    <p class="container text-s">© REMTEX все права защищены</p>
+  </div>
+</footer>

@@ -1,0 +1,115 @@
+{% from 'components/btn.njk' import btn %}
+
+<section class="section">
+  <div class="container">
+    <div class="section__heading section__heading_center">
+      <h2 class="section__title h2">Аренда мототехники</h2>
+    </div>
+    <div class="section__content">
+      <div class="lease">
+        {% set items = [
+          {
+            'imgName': 1,
+            'title': 'Газонокосилка Sadko ELM-1800',
+            'specs': [
+              {
+                'name': 'Ширина прокоса',
+                'value': '32 см'
+              },
+              {
+                'name': 'Объем травосборника',
+                'value': '25 л'
+              },
+              {
+                'name': 'Вес',
+                'value': '6,9 кг'
+              }
+            ],
+            'btnText': '200 ₴/день'
+          },
+          {
+            'imgName': 2,
+            'title': 'Бензопила Forte FGS 45-45',
+            'specs': [
+              {
+                'name': 'Ширина прокоса',
+                'value': '32 см'
+              },
+              {
+                'name': 'Объем травосборника',
+                'value': '25 л'
+              }
+            ],
+            'btnText': '100 ₴/день'
+          },
+          {
+            'imgName': 3,
+            'title': 'Газонокосилка Sadko ELM-1800',
+            'specs': [
+              {
+                'name': 'Ширина прокоса',
+                'value': '32 см'
+              },
+              {
+                'name': 'Объем травосборника',
+                'value': '25 л'
+              },
+              {
+                'name': 'Вес',
+                'value': '6,9 кг'
+              }
+            ],
+            'btnText': '160 ₴/день'
+          },
+          {
+            'imgName': 4,
+            'title': 'Газонокосилка Sadko ELM-1800',
+            'specs': [
+              {
+                'name': 'Ширина прокоса',
+                'value': '32 см'
+              },
+              {
+                'name': 'Объем травосборника',
+                'value': '25 л'
+              },
+              {
+                'name': 'Вес',
+                'value': '6,9 кг'
+              }
+            ],
+            'btnText': '50 ₴/день'
+          }
+        ] %}
+        {% for item in items %}
+          <article class="lease-card">
+            <div class="lease-card__col">
+              <img src="/assets/images/lease/{{ item.imgName }}.png" alt="" class="lease-card__img">
+            </div>
+            <div class="lease-card__inner">
+              <h3 class="lease-card__title h4">{{ item.title }}</h3>
+              <ul class="lease-card__specs">
+                {% for s in item.specs %}
+                  <li class="lease-card__spec text-s">
+                    <span>{{ s.name }}</span>
+                    <span class="bold"> {{ s.value }}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+              <div class="lease-card__action">
+                {{ btn(
+                  tag = 'a',
+                  modifier = [
+                    'secondary',
+                    'fluid'
+                  ],
+                  text= item.btnText
+                ) }}
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

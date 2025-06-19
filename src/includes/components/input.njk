@@ -1,0 +1,54 @@
+{% macro input(
+  type= "text",
+  placeholder= "",
+  name= "",
+  id= "",
+  value= "",
+  required= false,
+  disabled= false,
+  attributes= '',
+  appendType= "button",
+  appendIcon= "",
+  appendText= "",
+  enablePhoneMask= false
+) %}
+  <div class="input">
+    <input
+      type="{{ type }}"
+      placeholder="{{ placeholder }}"
+      class="input__controll
+        {% if enablePhoneMask %}
+          phone-mask
+        {% endif %}
+      "
+
+      {{ attributes }}
+
+      {% if name %}
+        name="{{ name }}"
+      {% endif %}
+
+      {% if id %}
+        id="{{ id }}"
+      {% endif %}
+
+      {% if value %}
+        value="{{ value }}"
+      {% endif %}
+
+      {% if required %}
+        required
+      {% endif %}
+
+      {% if disabled %}
+        disabled
+      {% endif %}
+    >
+    {% if appendIcon and appendText %}
+      <button class="input__append" type="{{ appendType }}">
+        <span class="visually-hidden">{{ appendText }}</span>
+        <span class="icon icon_sm icon_current-color icon_{{ appendIcon }}"></span>
+      </button>
+    {% endif %}
+  </div>
+{% endmacro %}

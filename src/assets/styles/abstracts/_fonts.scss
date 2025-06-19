@@ -1,0 +1,14 @@
+@mixin font($size, $weight) {
+	@font-face {
+		font-family: Montserrat;
+		font-display: swap;
+		src: local("Montserrat"), url("../fonts/Montserrat-#{$weight}.woff2") format("woff2");
+		font-weight: $size;
+		font-style: normal;
+	}
+}
+
+@include font(400, "Regular");
+@include font(500, "Medium");
+@include font(600, "SemiBold");
+@include font(700, "Bold");

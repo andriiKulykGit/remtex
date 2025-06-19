@@ -1,0 +1,86 @@
+{% from 'components/btn.njk' import btn %}
+
+{% macro slide(
+  title,
+  subtitle,
+  copyText,
+  currentSlide = 0,
+  totalSlides= 0,
+  isFirst= false
+) %}
+  <section class="hero__slide swiper-slide" aria-roledescription="slide" aria-live="polite">
+    <img src="/assets/images/heroSwiper/1/bg.jpg" alt="Зеленый газон с деревяными домами на фоне" class="hero__bg" decoding="async"
+    {% if isFirst %}
+      fetchpriority="high"
+      loading="eager"
+    {% else %}
+    loading="lazy"
+    {% endif %}>
+    <div class="container relative">
+      <div class="hero__content">
+        <h2 class="hero__title">{{ title | safe }}</h2>
+        <p class="hero__subtitle h2">{{ subtitle | safe }}</p>
+        <p class="hero__copy">{{ copyText | safe }}</p>
+        <div class="hero__action">
+          {{ btn(
+            text= 'Узнать детальней',
+            tag= 'a'
+          ) }}
+        </div>
+        <div class="hero__nav">
+          <button type="button" class="hero__btn hero__btn_prev" aria-controls="heroSlides">
+            <span class="visually-hidden">Предыдущий слайд</span>
+            <span class="icon icon_sm icon_current-color icon_chevron-left"></span>
+          </button>
+          <div class="hero__counter text-s">
+            <span>{{ currentSlide }}</span>
+            <span>/</span>
+            <span>{{ totalSlides }}</span>
+          </div>
+          <button type="button" class="hero__btn hero__btn_next" aria-controls="heroSlides">
+            <span class="visually-hidden">Следующий слайд</span>
+            <span class="icon icon_sm icon_current-color icon_chevron-right"></span>
+          </button>
+        </div>
+      </div>
+      <img src="/assets/images/heroSwiper/1/item.png" alt="Газонокосилка {модель}" class="hero__item" decoding="async" loading="lazy">
+    </div>
+  </section>
+{% endmacro %}
+
+<div class="hero" aria-roledescription="carousel" aria-label="Акції">
+  <div class="hero__swiper swiper">
+    <div id="heroSlides" class="hero__inner swiper-wrapper" aria-live="polite">
+      {% set slides = [
+        {
+          title: 'Акция',
+          subtitle: 'Подготовь газонокосилку к сезону',
+          copyText: 'СЕЗОННАЯ АКЦИЯ<br>Масло в ПОДАРОК!',
+          isFirst: true
+        },
+        {
+          title: 'Акция2',
+          subtitle: 'Подготовь газонокосилку к сезону',
+          copyText: 'СЕЗОННАЯ АКЦИЯ<br>Масло в ПОДАРОК!'
+        },
+        {
+          title: 'Акция3',
+          subtitle: 'Подготовь газонокосилку к сезону',
+          copyText: 'СЕЗОННАЯ АКЦИЯ<br>Масло в ПОДАРОК!'
+        }
+      ] %}
+
+      {% for s in slides %}
+        {{ slide(
+          title = s.title,
+          subtitle = s.subtitle,
+          copyText = s.copyText,
+          currentSlide = loop.index,
+          totalSlides = loop.length,
+          isFirst = s.isFirst
+        ) }}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="hero__pagination swiper-pagination"></div>
+</div>

@@ -1,0 +1,31 @@
+<section class="section">
+  <div class="container">
+    <header class="section__heading">
+      <h2 class="section__label caption">Сервисы</h2>
+      <h3 class="section__title h2">Ремонт и аренда оборудования</h3>
+    </header>
+    <div class="section__content">
+
+      <div class="services">
+        {% for i in range(5) %}
+          <a class="services__item" href="#">
+            <span class="services__glow"></span>
+            {% set imageName = 1 %}
+            {% if i > 1 %}
+              {% set imageName = 2 %}
+            {% endif %}
+            <img src="/assets/images/services/{{ imageName }}.png" alt="" class="services__img">
+            <p class="services__inner">
+              <span class="services__title h5">
+                Ремонт виброплит и строительной техники
+              </span>
+              <span class="btn__append">
+                <span class="icon icon_s icon_arrow icon_current-color"></span>
+              </span>
+            </p>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

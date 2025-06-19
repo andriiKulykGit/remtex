@@ -1,0 +1,58 @@
+<section class="section">
+  <div class="container">
+    <div class="section__heading-inner">
+      <div class="section__heading">
+        <h2 class="section__label">О нас</h2>
+        <p class="section__title h2">Почему тысячи людей доверились нам</p>
+      </div>
+      <div class="section__copy">
+        Мы располагаем всем необходимым оборудованием для выполнения широкого спектра ремонтных работ — от разборки электроинструментов до полной разборки тракторов, а также проведения сварочных работ и расточки двигателей.
+      </div>
+    </div>
+    <div class="section__content">
+      <div class="about-us">
+        <div class="about-us__grid">
+          {% set items = [
+            {
+              'icon': 'award',
+              'title': 'Профессиональный ремонт техники',
+              'text': 'У нас высококачественное обслуживание и ремонт садовой, строительной и  огородной техники, ведь мы знаем, каким нагрузкам она подвергается, а  настоящих специалистов найти очень сложно'
+            },
+            {
+              'icon': 'shield',
+              'title': 'Ваш инструмент в надёжных руках',
+              'text': 'Коллектив настоящих профессионалов своего дела. С нами можете не  волноваться о том, что появятся «лишние» запчасти, или что-то  потеряется. К Вашему инструменту мы относимся как к своему'
+            },
+            {
+              'icon': 'disc',
+              'title': 'Находим поломку с первого взгляда',
+              'text': 'Полная диагностика различных поломок, ведь правильное определение  проблемы значительно упрощает процесс ремонта. Наши мастера быстро и без ошибок узнают, что же произошло с Вашей техникой'
+            },
+            {
+              'icon': 'refresh-cw',
+              'title': 'Даём технике вторую жизнь',
+              'text': 'Мы не боимся сложностей. Только наши мастера могут взяться за технику,  которую остальные отправили бы на мусор. После исправления всех  неполадок можете быть уверены в том, что Ваша техника прослужит еще  долгое время'
+            }
+          ] %}
+
+          {% for item in items %}
+            <section class="about-us__item">
+              <div class="about-us__header">
+                <div class="about-us__icon">
+                  <span class="icon-wrapper">
+                    <span class="icon icon_m icon_current-color icon_{{ item.icon }}"></span>
+                  </span>
+                </div>
+                <h3 class="about-us__title h4">{{ item.title }}</h3>
+              </div>
+              <p class="about-us__text text-s">{{ item.text }}</p>
+            </section>
+          {% endfor %}
+        </div>
+        <div class="about-us__col">
+          <img class="about-us__img" src="/assets/images/about-us/bg.png" alt="" width="356">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

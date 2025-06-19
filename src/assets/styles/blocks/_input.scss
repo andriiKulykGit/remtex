@@ -1,0 +1,60 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.input {
+  position: relative;
+
+  &__controll {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: $gray-0;
+    border: 1px solid $gray-20;
+    outline: 1px solid #0000;
+    width: 100%;
+    font-size: 16px;
+    line-height: 160%;
+    color: $gray-100;
+
+    &:has(~ .input__append) {
+      padding-right: 44px;
+    }
+
+    &::placeholder {
+      color: $gray-60;
+    }
+
+    @include hover {
+      border-color: $gray-40;
+    }
+
+    &:focus-visible {
+      border-color: $primary !important;
+      outline: 1px solid $primary !important;
+    }
+
+    &:disabled {
+      background-color: $gray-10;
+      border-color: $gray-30;
+      color: $gray-60;
+    }
+  }
+
+  &__append {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $gray-50;
+    height: 100%;
+    aspect-ratio: 1;
+  }
+
+  &_error {
+    .input {
+      &__controll {
+        border-color: $error;
+        outline: 1px solid $error;
+      }
+    }
+  }
+}

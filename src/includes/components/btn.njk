@@ -1,0 +1,39 @@
+{% macro btn(
+  modifier= "primary",
+  size= "m",
+  text= "",
+  tag= "button",
+  href= "#",
+  type= "button",
+  disabled= false
+) %}
+
+  <{{ tag }}
+  class="btn btn_{{ size }}
+    {% if modifier | isArray %}
+      {% for m in modifier %}
+          btn_{{ m }}
+      {% endfor %}
+    {% else %}
+      btn_{{ modifier }}
+    {% endif %}
+  "
+
+  {% if tag == "button" %}
+    type="{{ type }}"
+  {% endif %}
+
+  {% if tag == "a" %}
+    href="{{ href }}"
+  {% endif %}
+
+  {% if disabled %}
+    disabled
+  {% endif %}
+  >
+    <span class="btn__text">{{ text }}</span>
+    <span class="btn__append">
+      <div class="icon icon_sm icon_current-color icon_arrow"></div>
+    </span>
+  </{{ tag }}>
+{% endmacro %}

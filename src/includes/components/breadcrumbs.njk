@@ -1,0 +1,32 @@
+{% set parentCrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) %}
+{% set currentPage = {
+  url: page.url,
+  title: eleventyNavigation.title,
+  isCurrent: true
+} %}
+{% set crumbs = parentCrumbs | concat(currentPage) %}
+
+<nav
+  class="breadcrumbs"
+  aria-label="Хлібні крихти">
+  <ol
+    class="breadcrumbs__list">
+    {% for crumb in crumbs %}
+      <li
+        class="breadcrumbs__item">
+        <a
+          href="{{ crumb.url }}"
+          class="breadcrumbs__link text-s"
+          {% if crumb.isCurrent %}
+            aria-current="page"
+          {% endif %}
+        >
+          <span
+            class="breadcrumbs__copy">
+            {{ crumb.title }}
+          </span>
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+</nav>

@@ -1,0 +1,23 @@
+---
+permalink: index.html
+layout: main.njk
+title: Homepage
+eleventyNavigation:
+  key: home
+  title: REMTEX
+---
+
+<h1 class="visually-hidden">SEO TEXT</h1>
+<p class="visually-hidden">SEO TEXT</p>
+
+{% include "sections/hero.njk" %}
+{% include "sections/promo.njk" %}
+{% include "sections/services.njk" %}
+{% include "sections/partners.njk" %}
+<div class="section">
+  <div class="container">
+    {% include "sections/delivery.njk" %}
+  </div>
+</div>
+{% include "sections/about-us.njk" %}
+{% include "sections/lease.njk" %}

@@ -1,0 +1,75 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.form {
+  position: relative;
+  background: center/cover no-repeat url('../images/form/bg.png') $gray-100;
+  color: $gray-0;
+  padding: 70px 80px;
+  border-radius: 16px;
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 64px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    background-color: $gray-0;
+    border-radius: 50%;
+    color: $gray-100;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      top: calc(50% - 1px);
+      transform: translateY(-50%);
+      width: 16px;
+      aspect-ratio: 1;
+      background: center/cover no-repeat url('../images/form/edge.svg');
+    }
+
+    &::before {
+      right: calc(100% - 3px);
+      transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+
+    &::after {
+      left: calc(100% - 3px);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    max-width: 400px;
+
+    &_form {
+      width: 400px;
+    }
+  }
+
+  &__title {
+  }
+
+  &__copy {
+  }
+}
+
+@media (width < 1000px) {
+  .form {
+    padding: 48px 24px;
+  }
+}

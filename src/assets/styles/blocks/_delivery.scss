@@ -1,0 +1,153 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.delivery {
+  background-color: $gray-100;
+  color: $gray-0;
+  padding: 48px 80px;
+  border-radius: 16px;
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    gap: 18px 8px;
+  }
+
+  &__title {
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__stat {
+    align-items: end;
+    display: flex;
+    gap: 8px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    &-label {
+      color: $gray-30;
+      font-weight: 500;
+
+    }
+
+    &-phone {
+      text-decoration: none;
+      color: inherit;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 120%;
+
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__item {
+    text-align: center;
+    padding: 16px;
+    background-color: $gray-90;
+    box-shadow: 0 4px 16px 0 rgba(4, 1, 85, 0.15);
+    border-radius: 4px;
+    flex: 1;
+
+    &-title {
+      margin-bottom: 4px;
+    }
+
+    &-copy {
+      color: $gray-30;
+    }
+
+    &-icon {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    color: $primary;
+    margin-top: 40px;
+  }
+}
+
+@media (width < 1000px) {
+  .delivery {
+    padding-inline: 40px;
+  }
+}
+
+@media (width < 680px) {
+  .delivery {
+    padding: 48px 16px;
+
+    &__title {
+      text-align: center;
+    }
+
+    &__stat {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__contact {
+      text-align: center;
+    }
+
+    &__contacts {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__header {
+      justify-content: center;
+      border-bottom: 1px solid $gray-80;
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+    }
+
+    &__items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    &__link {
+      margin-top: 24px;
+    }
+
+    &__item {
+      padding: 12px;
+
+      &-copy {
+        font-size: 13px;
+      }
+    }
+  }
+}

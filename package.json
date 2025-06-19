@@ -1,0 +1,67 @@
+{
+  "name": "11ty-starter",
+  "version": "1.0.0",
+  "description": "A starter kit for 11ty",
+  "author": "Andrii Kulyk <andrii.kulyk.job@gmail.com>",
+  "authorURL": "kulyk.pro",
+  "license": "ISC",
+  "keywords": [
+    "11ty",
+    "starter",
+    "template"
+  ],
+  "scripts": {
+    "build:js": "bun build src/assets/js/index.js --outdir=dist/assets/js --minify",
+    "watch:js": "bun build src/assets/js/index.js --outdir=dist/assets/js --watch",
+    "lint:scss": "stylelint \"src/assets/styles/**/*.scss\"",
+    "lint:js": "eslint \"src/assets/js/**/*.js\"",
+    "lint": "bun run lint:scss && bun run lint:js",
+    "minify:svg": "svgo --multipass -q -r -rf src/assets/icons -o dist/assets/icons",
+    "serve": "eleventy --serve",
+    "build": "ELEVENTY_ENV=production bun run build:js && bun run minify:svg && bunx @11ty/eleventy",
+    "dev": "ELEVENTY_ENV=development bun run minify:svg && bun run npm-run-all --parallel watch:js serve",
+    "preview": "bun run build serve",
+    "prepare": "husky"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^6.0.2",
+    "@11ty/eleventy-navigation": "^1.0.4",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.6",
+    "eleventy-plugin-html-validate": "^0.0.5",
+    "eleventy-plugin-rev": "^2.0.0",
+    "eleventy-sass": "^3.0.0-beta.0",
+    "eslint": "^8.57.0",
+    "fs-extra": "^11.3.0",
+    "html-minifier-terser": "^7.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.3",
+    "postcss-merge-rules": "^7.0.4",
+    "postcss-sort-media-queries": "^5.2.0",
+    "prettier": "^3.5.3",
+    "sass": "^1.87.0",
+    "scss-reset": "^1.4.6",
+    "simple-phone-mask": "^1.0.4",
+    "stylelint": "^16.19.1",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-scss": "^6.12.0",
+    "swiper": "^11.2.8"
+  },
+  "type": "module",
+  "browserslist": [
+    "defaults",
+    "not dead",
+    "not IE 11",
+    "not < 0.25%",
+    "not op_mini all"
+  ],
+  "lint-staged": {
+    "src/assets/styles/**/*.scss": ["stylelint --fix"],
+    "src/assets/js/**/*.js": ["eslint --fix"]
+  }
+}

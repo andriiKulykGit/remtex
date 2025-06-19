@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  {% include "parts/head.njk" %}
+</head>
+<body>
+  <div class="wrapper">
+    {% include "sections/header.njk" %}
+    <main class="inner">
+      {{ content | safe }}
+    </main>
+    {% include "sections/footer.njk" %}
+  </div>
+  {% include "parts/scripts.njk" %}
+</body>
+</html>

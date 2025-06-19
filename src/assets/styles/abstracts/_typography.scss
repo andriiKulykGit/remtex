@@ -1,0 +1,53 @@
+.h1 {
+  font-size: clamp(30px, 2.62vw, 46px);
+  font-weight: 600;
+  line-height: 110%;
+}
+
+.h2 {
+  font-size: clamp(28px, 2.62vw, 32px);
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.h3 {
+  font-size: clamp(24px, 2.62vw, 28px);
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.h4 {
+  font-size: clamp(20px, 2.62vw, 22px);
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.h5 {
+  font-size: clamp(16px, 2.62vw, 18px);
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.text {
+  &-l {
+    font-size: 18px;
+    line-height: 160%;
+  }
+
+  &-m {
+    font-size: 16px;
+    line-height: 160%;
+  }
+
+  &-s {
+    font-size: 14px;
+    line-height: 160%;
+  }
+}
+
+.caption {
+  font-size: 12px;
+  letter-spacing: 15%;
+  font-weight: 500;
+  line-height: 140%;
+}

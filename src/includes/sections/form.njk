@@ -1,0 +1,31 @@
+{% from 'components/input.njk' import input %}
+{% from 'components/btn.njk' import btn %}
+
+<section class="form">
+  <div class="form__icon">
+    <span class="icon icon_l icon_current-color icon_repair"></span>
+  </div>
+  <div class="form__inner">
+    <div class="form__col">
+      <h2 class="form__title h2">Заявка на ремонт</h2>
+      <p class="form__copy text-s">Оставьте номер телефона и менеджер свяжется с Вами в ближайшее время</p>
+    </div>
+    <form action="#" class="form__col form__col_form">
+      {{
+        input(
+          placeholder = "",
+          required = true,
+          name = "phone",
+          enablePhoneMask= true,
+          attributes = 'inputmode="numeric"'
+        )
+      }}
+      {{
+        btn(
+          text = 'Отправить',
+          modifier = ['primary', 'fluid']
+        )
+      }}
+    </form>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+{% macro product(
+  title = '',
+  imageName = ''
+) %}
+  <article class="product">
+    <div class="product__inner">
+      <img src="/assets/images/products/{{ imageName }}.png" alt="" class="product__img" width="148" height="148">
+    </div>
+    <a href="#" class="product__title h5">
+      {{ title }}
+    </a>
+  </article>
+{% endmacro %}

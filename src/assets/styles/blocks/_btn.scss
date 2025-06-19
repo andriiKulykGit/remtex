@@ -1,0 +1,123 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn {
+  display: flex;
+  background-color: var(--bg);
+  color: var(--color);
+  font-size: 16px;
+  line-height: 140%;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 8px;
+  width: fit-content;
+  justify-content: space-between;
+
+  &__text {
+    padding: 5px 15px;
+    padding-right: 0;
+    pointer-events: none;
+  }
+
+  &__append {
+    pointer-events: none;
+    display: grid;
+    place-items: center;
+    background-color: var(--append-bg);
+    color: var(--append-color);
+    min-width: 42px;
+    padding-left: 6px;
+    aspect-ratio: 43 / 32;
+    transition: background-color .1s;
+    clip-path: path("M0.67746 4.12913C-0.123955 2.15642 1.32757 0 3.45686 0H39C40.6569 0 42 1.34315 42 3V29C42 30.6569 40.6569 32 39 32H14.0194C12.7985 32 11.6995 31.2602 11.24 30.1291L0.67746 4.12913Z");
+  }
+
+  &_primary {
+    --bg: var(--primary);
+    --color: var(--gray-0);
+    --append-bg: var(--gray-0);
+    --append-color: var(--gray-100);
+    --active-bg: var(--primary-active);
+
+    transition: background-color .1s;
+
+    @include hover {
+      --append-color: var(--gray-0);
+      --append-bg: var(--gray-100);
+    }
+
+    &.btn:active {
+      background-color: var(--active-bg);
+    }
+  }
+
+  &_secondary {
+    --bg: var(--gray-100);
+    --color: var(--gray-0);
+    --append-bg: var(--gray-0);
+    --append-color: var(--gray-100);
+
+    @include hover {
+      --append-color: var(--gray-0);
+      --append-bg: var(--primary);
+    }
+
+    &.btn:active {
+      --append-bg: var(--primary-active);
+    }
+  }
+
+  &_l {
+    padding: 6px;
+
+    .btn {
+      &__text {
+        padding-block: 10px;
+      }
+
+      &__append {
+        padding-left: 10px;
+        min-width: 52px;
+        clip-path: path("M0.64862 4.11557C-0.140844 2.14477 1.31046 0 3.43349 0H49C50.6569 0 52 1.34315 52 3V37C52 38.6569 50.6569 40 49 40H17.0533C15.8271 40 14.7243 39.2538 14.2684 38.1156L0.64862 4.11557Z");
+      }
+    }
+  }
+
+  &_fluid {
+    width: 100%;
+  }
+
+  &[disabled] {
+    --bg: var(--gray-30);
+    --color: var(--gray-0);
+    --append-bg: var(--gray-40);
+    --append-color: var(--color);
+  }
+
+  &-carousel {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid $gray-20;
+    color: $gray-100;
+    z-index: 11;
+
+    @include hover {
+      border-color: currentColor;
+    }
+
+    &_invert {
+      color: $gray-0;
+      border-color: currentColor;
+
+      @include hover {
+        border-color: $gray-0;
+        background-color: $gray-0;
+        color: $gray-100;
+      }
+    }
+  }
+}

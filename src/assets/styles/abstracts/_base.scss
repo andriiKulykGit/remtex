@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+body {
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 130%;
+  color: $gray-100;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.inner {
+  flex-grow: 1;
+}
+
+*:focus-visible {
+  outline: 2px solid #000;
+}

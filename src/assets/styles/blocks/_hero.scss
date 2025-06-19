@@ -1,0 +1,155 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero {
+  position: relative;
+  margin-bottom: $section-margin;
+
+  &__slide {
+    position: relative;
+    color: $gray-0;
+    height: 620px;
+
+    & > picture {
+      width: 100%;
+      position: absolute;
+      inset: 0;
+    }
+
+    & > .container {
+      height: 100%;
+    }
+  }
+
+  &__bg {
+    margin-inline: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    padding-top: 80px;
+    max-width: 620px;
+  }
+
+  &__title {
+    color: $primary;
+    margin-bottom: clamp(9px, 2.62vw, 12px);
+    font-size: clamp(36px, 2.62vw, 64px);
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  &__subtitle {
+    font-size: clamp(20px, 2.62vw, 32px);
+    margin-bottom: clamp(9px, 2.62vw, 12px);
+  }
+
+  &__copy {
+    font-weight: 700;
+    font-size: clamp(20px, 2.62vw, 34px);
+    line-height: 130%;
+  }
+
+  &__action {
+    margin-top: clamp(16px, 2.62vw, 48px);
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+  }
+
+  &__btn {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid $gray-0;
+    color: $gray-0;
+    transition: background-color .1s;
+
+    @include hover {
+      background-color: rgba(#fff, 0.2);
+    }
+
+    &.hero__btn:active {
+      background-color: rgba(#fff, 0.4);
+    }
+  }
+
+  &__item {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    max-width: 500px;
+  }
+
+  &__pagination {
+    position: absolute;
+    left: 50%;
+    top: auto;
+    bottom: 12px;
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background-color: #0000;
+      border: 2px solid $gray-0;
+      opacity: 1;
+
+      &-active {
+        background-color: #fff;
+      }
+    }
+  }
+}
+@media (width < 1000px) {
+  .hero {
+    &__nav {
+      display: none;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 26px;
+      padding-bottom: 12px;
+      text-align: center;
+      max-width: none;
+    }
+
+    &__item {
+      max-height: 170px;
+      bottom: 28px;
+      top: auto;
+      right: 50%;
+      transform: translateX(50%);
+      object-fit: contain;
+    }
+
+    &__slide {
+      height: 460px;
+    }
+  }
+}
+
+@media (width >= 1000px) {
+  .hero {
+    &__pagination {
+      display: none;
+    }
+  }
+}

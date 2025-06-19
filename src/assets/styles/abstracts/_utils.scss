@@ -1,0 +1,68 @@
+@use 'variables' as *;
+
+.none {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+  user-select: none !important;
+}
+
+.no-scroll {
+  overflow-y: hidden !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.relative {
+  position: relative !important;
+}
+
+.nowrap {
+  white-space: nowrap !important;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.lowercase {
+  text-transform: lowercase !important;
+}
+
+.bold {
+  font-weight: 700 !important;
+}
+
+.semibold {
+  font-weight: 600 !important;
+}
+
+.medium {
+  font-weight: 500 !important;
+}
+
+
+.primary {
+  color: $primary;
+}
+
+.gray-30 {
+  color: $gray-30;
+}
+
+.gray-40 {
+  color: $gray-40;
+}

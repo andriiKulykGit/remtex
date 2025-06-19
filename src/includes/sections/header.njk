@@ -1,0 +1,128 @@
+{% from 'components/input.njk' import input %}
+
+<header class="header">
+  <div class="header__overlay" id="overlay"></div>
+  <div class="header__top" id="menu">
+    <div class="container">
+      <div class="header__top-inner">
+        <p class="header__address caption">ул. Кольцевая дорога 22 (Правый берег)</p>
+        <div class="header__inner">
+          <div class="header__social">
+            <span class="visually-hidden">Социальные сети:</span>
+            <ul class="header__social-list" role="none">
+              <li>
+                <a href="#" class="header__social-icon" title="Instagram">
+                  <span class="visually-hidden" translate="no">Instagram</span>
+                  <span class="icon icon_s icon_current-color icon_inst"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="header__social-icon" title="Facebook">
+                  <span class="visually-hidden" translate="no">Facebook</span>
+                  <span class="icon icon_s icon_current-color icon_fb"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="header__social-icon" title="YouTube">
+                  <span class="visually-hidden" translate="no">YouTube</span>
+                  <span class="icon icon_s icon_current-color icon_yt"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <span class="vertical-separator" role="none"></span>
+          <nav class="header__nav">
+            <span class="visually-hidden">Навигационное меню:</span>
+            <ul class="header__nav-list" role="none">
+              <li class="header__mobile-only">
+                <a href="#" class="header__nav-link semibold caption">Ремонт</a>
+              </li>
+              <li class="header__mobile-only">
+                <a href="#" class="header__nav-link semibold caption">Запчасти</a>
+              </li>
+              <li class="header__mobile-only">
+                <a href="#" class="header__nav-link semibold caption">Аренда</a>
+              </li>
+              <li>
+                <a href="#" class="header__nav-link caption">Акции и новости</a>
+              </li>
+              <li>
+                <a href="#" class="header__nav-link caption">О компании</a>
+              </li>
+              <li>
+                <a href="#" class="header__nav-link caption">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <span class="vertical-separator" role="none"></span>
+          <div class="header__lang">
+            <span class="visually-hidden">Язык сайта:</span>
+            <ul class="langs" role="none">
+              <li>
+                <a href="#" class="langs__link caption bold" aria-selected title="Украинский" aria-label="Украинский">УКР</a>
+              </li>
+              <li>
+                <a href="#" class="langs__link caption bold" title="Русский" aria-label="Русский">РУС</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <div class="container">
+      <div class="header__bottom-inner">
+        <div class="header__left">
+          <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-haspopup="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="visually-hidden">открыть или закрыть навигационное меню</span>
+          </button>
+          <a href="/" class="header__logo">
+            <img src="/assets/images/logo.svg" alt="Ремтех" width="198" fetchpriority="hight">
+          </a>
+          <nav class="header__menu">
+            <ul class="header__menu-list">
+              <li>
+                <a href="#" class="header__menu-link text-m">Ремонт</a>
+              </li>
+              <li>
+                <a href="#" class="header__menu-link text-m">Запчасти</a>
+              </li>
+              <li>
+                <a href="#" class="header__menu-link text-m">Аренда</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__right">
+          <form class="header__search" action="#" method="post" role="search">
+            {{ input(
+              placeholder= "Пошук...",
+              name= "search",
+              id= "search",
+              value= "",
+              required= true,
+              appendType= "submit",
+              appendIcon= "search",
+              appendText= "Пошук"
+            ) }}
+          </form>
+          <div class="header__phone">
+            <a class="phone" href="tel:0679943669">
+              <span class="visually-hidden">
+                контактный номер телефона:
+              </span>
+              <span class="icon icon_sm icon_current-color icon_phone"></span>
+              <span class="phone__copy text-l">
+                067 994 36 69
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

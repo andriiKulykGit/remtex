@@ -1,0 +1,21 @@
+@use '../abstracts/mixins' as *;
+
+.link {
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+  text-decoration: none;
+
+  &__copy {
+  }
+
+  &__append {
+    display: flex;
+    height: fit-content;
+  }
+
+  @include hover {
+    text-decoration: underline;
+  }
+}

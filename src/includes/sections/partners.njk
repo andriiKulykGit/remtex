@@ -1,0 +1,43 @@
+<section class="section">
+  <div class="container">
+    <header class="section__heading section__heading_center">
+      <h2 class="section__label caption">Производители</h2>
+      <h3 class="section__title h2" id="partnersTitle">Обслуживаемые марки</h3>
+    </header>
+    <p class="section__subtitle center text-s">Широкий перечень брендов, с которыми мы работаем</p>
+    <div class="section__content">
+      <div class="partners">
+        <div class="partners__carousell swiper" aria-roledescription="carousel" aria-labelledby="partnersTitle">
+          <div class="partners__inner swiper-wrapper">
+            {% for p in range(2) %}
+              {% set imgIndex = 1 %}
+              {% for i in range(0, 5) %}
+                <div class="partners__slide swiper-slide" aria-roledescription="slide" aria-live="polite">
+                  {% for k in range(3) %}
+                    <img class="lozad" src="/assets/images/partners/{{ imgIndex }}.png" alt="/Название компании/" width="120" height="70">
+                    {% set imgIndex = imgIndex + 1 %}
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="partners__nav">
+          <button type="button" class="btn-carousel btn-carousel_prev" id="partnersPrev">
+            <span class="visually-hidden">Предыдущий слайд</span>
+            <span class="icon icon_sm icon_current-color icon_chevron-left"></span>
+          </button>
+          <div class="partners__counter text-s swiper-pagination">
+            <span class="partners__counter-current">{{ currentSlide }}</span>
+            <span>/</span>
+            <span class="partners__counter-total">{{ totalSlides }}</span>
+          </div>
+          <button type="button" class="btn-carousel btn-carousel_next" id="partnersNext">
+            <span class="visually-hidden">Следующий слайд</span>
+            <span class="icon icon_sm icon_current-color icon_chevron-right"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
