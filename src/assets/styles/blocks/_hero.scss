@@ -114,6 +114,10 @@
       }
     }
   }
+
+  &:has(+ .breadcrumbs-wrapper) {
+    margin-bottom: 24px;
+  }
 }
 @media (width < 1000px) {
   .hero {
